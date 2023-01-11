@@ -7,11 +7,15 @@ This project aims to classify Type Ia supernovae from other transients and varia
 
 ## Methods
 
-Because CNNs are particularly good at working with images, I generated "heatmaps" from light curves by using Gaussian Process Regression. An sample light curve is shown below:
+Because CNNs are particularly good at working with images, I generated "heatmaps" from light curves by using Gaussian Process Regression. A sample light curve is shown below:
 
 ![Sample light curve](/lightcurve.png "Sample light curve")
 
-Given the flux values at different times, as well as the passband for each measurement, Gaussian Process Regression can yield a 2D matrix, with one dimension being time and the other being wavelength. Essentially, we "augment" the data and generate light curves at various wavelengths. This heatmap is the input to the CNN, which detects patterns in the heatmap to classify Type Ia supernovae.
+Given the flux values at different times, as well as the passband for each measurement, Gaussian Process Regression can yield a 2D matrix, with one dimension being time and the other being wavelength. Essentially, we "augment" the data and generate light curves at various wavelengths. A sample heatmap is shown below:
+
+![Sample heatmap](/heatmap.png "Sample heatmap")
+
+This heatmap is the input to the CNN, which detects patterns in the heatmap to classify Type Ia supernovae.
 
 ## Results
 ![Accuracies](/accuracies.png "Accuracies")
